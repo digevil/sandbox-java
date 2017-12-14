@@ -6,7 +6,11 @@
 
     <groupId>org.digevil</groupId>
     <artifactId>sandbox-java</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>web</module>
+    </modules>
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
