@@ -1,5 +1,7 @@
 package org.digevil.greys.model;
 
+import com.google.common.base.MoreObjects;
+
 /**
  * Created by huangtao729 on 2017/12/12.
  */
@@ -28,5 +30,13 @@ public class ValueObject {
         super();
         setCount(count);
         setText(text);
+    }
+
+    @Override
+    public String toString() {
+        return MoreObjects.toStringHelper(this)
+                .add("count", getCount())
+                .add("text", getText())
+                .toString();
     }
 }

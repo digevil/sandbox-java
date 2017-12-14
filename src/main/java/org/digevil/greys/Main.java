@@ -2,24 +2,18 @@ package org.digevil.greys;
 
 import org.digevil.greys.exception.WrapException;
 import org.digevil.greys.model.ValueObject;
-import org.digevil.greys.service.ComputeService;
-import org.digevil.greys.service.TextService;
+import org.digevil.greys.service.ServiceWrapper;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        ComputeService cs = new ComputeService();
-        TextService ts = new TextService();
+        ServiceWrapper sw = new ServiceWrapper();
 
         while (true) {
-            try {
-                ValueObject vo = new ValueObject(0, System.currentTimeMillis() + "");
-                vo.setText(ts.operate(vo.getText()));
-                System.out.println("operated text: " + vo.getText());
-            } catch (WrapException e) {
-                e.printStackTrace();
-            }
+            ValueObject vo = new ValueObject(0, System.currentTimeMillis() + "");
+            sw.execute(vo);
+            System.out.println("operated vo: " + vo);
         }
     }
 }
