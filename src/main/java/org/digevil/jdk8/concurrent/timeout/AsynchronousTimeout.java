@@ -4,10 +4,11 @@ import java.util.concurrent.*;
 
 /**
  * 使用 CompletableFuture 代替 Future, 使用一个额外的 ScheduledExecutorService 来触发超时返回
+ * 这个方案的缺点是虽然超时抛出了异常但是 future 还在继续执行，改进请看 V2
  *
  * 参考
  * https://crondev.wordpress.com/2017/01/23/timeouts-with-java-8-completablefuture-youre-probably-doing-it-wrong/
- *
+ * <p>
  * Created by toni on 2017/12/24.
  */
 public class AsynchronousTimeout {
