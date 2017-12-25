@@ -2,23 +2,21 @@ package org.digevil.web.model;
 
 import io.swagger.annotations.ApiModelProperty;
 
-import javax.persistence.*;
-
 /**
  * Created by huangtao729 on 2017/12/15.
  */
-@Entity
+//@Entity
 public class User {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.AUTO)
     @ApiModelProperty(notes = "the database generated user id")
     private Integer id;
 
     @ApiModelProperty(notes = "name of the user")
     private String name;
 
-    @Version
+//    @Version
     @ApiModelProperty(notes = "the auto generated version of the user")
     private Integer version;
 
