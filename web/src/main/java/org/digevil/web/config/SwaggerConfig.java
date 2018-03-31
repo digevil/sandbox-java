@@ -21,7 +21,7 @@ public class SwaggerConfig {
     @Bean
     public Docket productApi() {
         return new Docket(DocumentationType.SWAGGER_2)
-                .select().apis(RequestHandlerSelectors.basePackage("org.digevil.web.controller"))
+                .select().apis(RequestHandlerSelectors.basePackage("org.org.digevil.web.controller"))
                 .paths(any())
                 .build();
     }
@@ -32,7 +32,7 @@ public class SwaggerConfig {
                 "Sandbox Java Java Web REST API for demo",
                 "1.0.0",
                 "Terms of service",
-                new Contact("digevil", "https://digevil.org/about/", "john@springfrmework.guru"),
+                new Contact("org.digevil", "https://org.digevil.org/about/", "john@springfrmework.guru"),
                 "Apache License Version 2.0",
                 "https://www.apache.org/licenses/LICENSE-2.0");
         return apiInfo;

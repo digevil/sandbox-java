@@ -1,6 +1,5 @@
 package org.digevil.greys;
 
-import org.digevil.greys.exception.WrapException;
 import org.digevil.greys.model.ValueObject;
 import org.digevil.greys.service.ServiceWrapper;
 
