@@ -1,6 +1,0 @@
-org/digevil/web/Application.class
-org/digevil/web/model/User.class
-org/digevil/web/config/SwaggerConfig.class
-org/digevil/web/controller/ApiController.class
-org/digevil/web/controller/HelloWorldController.class
-org/digevil/web/controller/UserController.class
