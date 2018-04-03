@@ -21,7 +21,7 @@ public class SwaggerConfig {
     @Bean
     public Docket productApi() {
         return new Docket(DocumentationType.SWAGGER_2)
-                .select().apis(RequestHandlerSelectors.basePackage("org.org.digevil.web.controller"))
+                .select().apis(RequestHandlerSelectors.basePackage("org.digevil.web.controller"))
                 .paths(any())
                 .build();
     }
