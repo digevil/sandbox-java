@@ -4,6 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
     <modules>
+        <module>b-core-jdk8</module>
     </modules>
     <groupId>org.digevil</groupId>
     <artifactId>sandbox-java</artifactId>
