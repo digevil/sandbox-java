@@ -13,9 +13,13 @@ public class BenchHash {
      * {@code @Benchmark} indicates that this method will be measured by jmh
      * <p>
      * {@code @BenchmarkMode} indicates what kind of benchmark to be run, should be one of the following:
+     * <p>
      * - AverageTime
+     * <p>
      * - Throughput
+     * <p>
      * - SampleTime
+     * <p>
      * - SingleShotTime
      * <p>
      * {@code @Fork} indicates that how many round and how many warmups to go

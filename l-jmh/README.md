@@ -19,11 +19,14 @@ mvn archetype:generate \
 ```bash
 java -jar target/benchmark.jar YourBenchMarkClass
 ```
-上面代码示例里 `YourBenchMarkClass` 就是你需要执行的测试类
+上面代码示例里 `YourBenchMarkClass` 就是你需要执行的测试类, 记得每次变更你的 benchmark 类都要重新`mvn install`一下, 重新生成 `benchmark.jar`
 
 ## 几个测试说明
 
 ### hash
+
+测试Guava的murmur3_128函数面对不同长度字符串时候的性能表现
+
 执行:
 ```bash
 java -jar target/benchmark.jar BenchHash
@@ -33,14 +36,17 @@ java -jar target/benchmark.jar BenchHash
 ...
 
 Benchmark                   (iterations)   Mode  Cnt  Score   Error   Units
-BenchHash.benchMurmur3_128           100  thrpt       0.369          ops/us
-BenchHash.benchMurmur3_128           200  thrpt       0.176          ops/us
+BenchHash.benchMurmur3_128           100  thrpt       0.376          ops/us
+BenchHash.benchMurmur3_128           200  thrpt       0.165          ops/us
 BenchHash.benchMurmur3_128           300  thrpt       0.105          ops/us
-BenchHash.benchMurmur3_128           500  thrpt       0.070          ops/us
-BenchHash.benchMurmur3_128          1000  thrpt       0.031          ops/us
+BenchHash.benchMurmur3_128           500  thrpt       0.072          ops/us
+BenchHash.benchMurmur3_128          1000  thrpt       0.037          ops/us
 ```
 
 ### deadCode
+
+这个测试里有一个Benchmark使用了`Blackhole`对象, 这是JMH应对死代码(dead code)的一种处理方式, 使得测试更具参考性
+
 执行:
 ```bash
 java -jar target/benchmark.jar BenchDeadCode
@@ -85,6 +91,9 @@ BenchDeadCode.pillarsOfCreation  avgt   10  4.430 ± 0.073  ns/op
 ```
 
 ### string
+
+测试普通字符串常量拼接和使用 `StringBuilder` 拼接的性能差异
+
 执行:
 ```bash
 java -jar target/benchmark.jar BenchStringConcat
