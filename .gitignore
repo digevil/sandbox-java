@@ -1,6 +1,9 @@
 # Compiled class file
 *.class
 
+# maven build target
+**/target
+
 # Log file
 *.log
 

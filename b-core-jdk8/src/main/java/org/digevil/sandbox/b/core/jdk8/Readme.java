@@ -1,4 +1,4 @@
-package org.digevil.sandbox.core.jdk8;
+package org.digevil.sandbox.b.core.jdk8;
 
 public class Readme {
     public static void main(String[] args) {

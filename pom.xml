@@ -5,6 +5,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>b-core-jdk8</module>
+        <module>l-jmh</module>
     </modules>
     <groupId>org.digevil</groupId>
     <artifactId>sandbox-java</artifactId>
@@ -28,6 +29,14 @@
                 <version>7.7.1</version>
                 <scope>test</scope>
             </dependency>
+
+            <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>31.1-jre</version>
+            </dependency>
+
 
         </dependencies>
     </dependencyManagement>
