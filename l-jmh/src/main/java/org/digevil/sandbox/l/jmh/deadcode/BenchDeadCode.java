@@ -1,37 +1,40 @@
 package org.digevil.sandbox.l.jmh.deadcode;
 
-import org.openjdk.jmh.annotations.Benchmark;
-import org.openjdk.jmh.annotations.BenchmarkMode;
-import org.openjdk.jmh.annotations.Mode;
-import org.openjdk.jmh.annotations.OutputTimeUnit;
+import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.infra.Blackhole;
 
 import java.util.concurrent.TimeUnit;
 
+@BenchmarkMode(Mode.AverageTime)
+@OutputTimeUnit(TimeUnit.NANOSECONDS)
 public class BenchDeadCode {
     @Benchmark
-    @OutputTimeUnit(TimeUnit.NANOSECONDS)
-    @BenchmarkMode(Mode.AverageTime)
+    @Fork(value = 2)
+    @Measurement(iterations = 5, time = 1)
+    @Warmup(iterations = 5, time = 1)
     public void doNothing() {
     }
 
     @Benchmark
-    @OutputTimeUnit(TimeUnit.NANOSECONDS)
-    @BenchmarkMode(Mode.AverageTime)
+    @Fork(value = 2)
+    @Measurement(iterations = 5, time = 1)
+    @Warmup(iterations = 5, time = 1)
     public void objectCreation() {
         new Object();
     }
 
     @Benchmark
-    @OutputTimeUnit(TimeUnit.NANOSECONDS)
-    @BenchmarkMode(Mode.AverageTime)
+    @Fork(value = 2)
+    @Measurement(iterations = 5, time = 1)
+    @Warmup(iterations = 5, time = 1)
     public Object pillarsOfCreation() {
         return new Object();
     }
 
     @Benchmark
-    @OutputTimeUnit(TimeUnit.NANOSECONDS)
-    @BenchmarkMode(Mode.AverageTime)
+    @Fork(value = 2)
+    @Measurement(iterations = 5, time = 1)
+    @Warmup(iterations = 5, time = 1)
     public void blackHole(Blackhole blackhole) {
         blackhole.consume(new Object());
     }

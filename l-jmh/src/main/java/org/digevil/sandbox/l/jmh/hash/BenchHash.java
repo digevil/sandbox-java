@@ -1,11 +1,9 @@
 package org.digevil.sandbox.l.jmh.hash;
 
-import org.openjdk.jmh.annotations.Benchmark;
-import org.openjdk.jmh.annotations.BenchmarkMode;
-import org.openjdk.jmh.annotations.Fork;
-import org.openjdk.jmh.annotations.Mode;
+import org.openjdk.jmh.annotations.*;
 
 import java.nio.charset.Charset;
+import java.util.concurrent.TimeUnit;
 
 /**
  * ref: <a href="https://www.baeldung.com/java-microbenchmark-harness">...</a>
@@ -24,7 +22,10 @@ public class BenchHash {
      */
     @Benchmark
     @BenchmarkMode(Mode.Throughput)
+    @OutputTimeUnit(TimeUnit.MICROSECONDS)
     @Fork(value = 1, warmups = 1)
+    @Measurement(iterations = 1, time = 1)
+    @Warmup(iterations = 1, time = 1)
     public void benchMurmur3_128(HashExecutionPlan plan) {
         for (int i = plan.iterations; i > 0; i--) {
             plan.murmur3.putString(plan.password, Charset.defaultCharset());
