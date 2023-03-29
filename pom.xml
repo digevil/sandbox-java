@@ -8,6 +8,7 @@
     <modules>
         <module>b-core-jdk8</module>
         <module>l-jmh</module>
+        <module>s-boot3-simple</module>
     </modules>
 
     <groupId>org.digevil</groupId>
