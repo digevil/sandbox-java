@@ -6,6 +6,7 @@ import org.digevil.sboot3user.SBoot3UserApplicationTests;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import static org.digevil.sandbox.s.model.UserGender.MALE;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotNull;
 
@@ -27,6 +28,7 @@ public class UserMapperTest extends SBoot3UserApplicationTests {
         assertEquals(1, user.getId());
         assertEquals("5e00c197-eab3-11ea-ae6a-0242ac110003", user.getUuid());
         assertEquals("toni", user.getName());
+        assertEquals(MALE, user.getGender());
     }
 
     @Test
@@ -37,5 +39,6 @@ public class UserMapperTest extends SBoot3UserApplicationTests {
         assertEquals(1, user.getId());
         assertEquals("5e00c197-eab3-11ea-ae6a-0242ac110003", user.getUuid());
         assertEquals("toni", user.getName());
+        assertEquals(MALE, user.getGender());
     }
 }
