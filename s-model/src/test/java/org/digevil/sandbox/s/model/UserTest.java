@@ -10,16 +10,16 @@ public class UserTest {
     public void testUser() {
         User user1 = new User();
         user1.setId(100);
-        user1.setIdHash("abc");
+        user1.setUuid("abc");
         user1.setName("toni");
 
         assertEquals(100, user1.getId());
-        assertEquals("abc", user1.getIdHash());
+        assertEquals("abc", user1.getUuid());
         assertEquals("toni", user1.getName());
 
         User user2 = new User();
         user2.setId(100);
-        user2.setIdHash("abc");
+        user2.setUuid("abc");
         user2.setName("toni");
 
         assertEquals(user1, user2);

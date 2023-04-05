@@ -6,7 +6,7 @@ import com.google.common.base.Objects;
 public class User {
 
     private Integer id;
-    private String idHash;
+    private String uuid;
     private String name;
 
     public Integer getId() {
@@ -17,12 +17,12 @@ public class User {
         this.id = id;
     }
 
-    public String getIdHash() {
-        return idHash;
+    public String getUuid() {
+        return uuid;
     }
 
-    public void setIdHash(String idHash) {
-        this.idHash = idHash;
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
     public String getName() {
@@ -38,19 +38,19 @@ public class User {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return Objects.equal(id, user.id) && Objects.equal(idHash, user.idHash) && Objects.equal(name, user.name);
+        return Objects.equal(id, user.id) && Objects.equal(uuid, user.uuid) && Objects.equal(name, user.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(id, idHash, name);
+        return Objects.hashCode(id, uuid, name);
     }
 
     @Override
     public String toString() {
         return MoreObjects.toStringHelper(this)
                 .add("id", id)
-                .add("idHash", idHash)
+                .add("idHash", uuid)
                 .add("name", name)
                 .toString();
     }
