@@ -15,24 +15,36 @@ public class User {
         return id;
     }
 
-    public void setId(Integer id) {
+    public User setId(Integer id) {
         this.id = id;
+        return this;
     }
 
     public String getUuid() {
         return uuid;
     }
 
-    public void setUuid(String uuid) {
+    public User setUuid(String uuid) {
         this.uuid = uuid;
+        return this;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public User setName(String name) {
         this.name = name;
+        return this;
+    }
+
+    public UserGender getGender() {
+        return gender;
+    }
+
+    public User setGender(UserGender gender) {
+        this.gender = gender;
+        return this;
     }
 
     @Override
@@ -56,13 +68,5 @@ public class User {
                 .add("name", name)
                 .add("gender", gender)
                 .toString();
-    }
-
-    public UserGender getGender() {
-        return gender;
-    }
-
-    public void setGender(UserGender gender) {
-        this.gender = gender;
     }
 }

@@ -1,8 +1,6 @@
 package org.digevil.sboot3user.mapper;
 
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 import org.digevil.sandbox.s.model.User;
 
 @Mapper
@@ -24,4 +22,8 @@ public interface UserMapper {
 
     @Select("SELECT * FROM aio_users WHERE uuid = #{uuid}")
     User findByUuid(@Param("uuid") String uuid);
+
+    @Insert("INSERT INTO aio_users(uuid, name, gender) VALUES (#{uuid}, #{name}, #{gender})")
+    @Options(useGeneratedKeys = true, keyProperty = "id", keyColumn = "id")
+    void insert(User user);
 }
