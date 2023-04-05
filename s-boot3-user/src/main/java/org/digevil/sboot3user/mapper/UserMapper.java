@@ -10,4 +10,7 @@ public interface UserMapper {
 
     @Select("SELECT * FROM aio_users WHERE id = #{id}")
     User findById(@Param("id") int id);
+
+    @Select("SELECT * FROM aio_users WHERE uuid = #{uuid}")
+    User findByUuid(@Param("uuid") String uuid);
 }
