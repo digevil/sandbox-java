@@ -41,7 +41,7 @@ public class UserController {
      * @param id
      * @return
      */
-    @Operation(summary = "根据用户id获取用户详情(xml)", description = "根据用户id返回单个用户对象，暂时不可用，需要注册一个 xml 的 HttpMessageConverter",
+    @Operation(summary = "根据用户id获取用户详情(xml)", description = "根据用户id返回单个用户对象，需要注册一个 xml 的 HttpMessageConverter，引入 jaxb-runtime 或者 jackson-dataformat-xml 均可以让 springboot 自动注册一个 xml的转换器",
             parameters = {@Parameter(name = "id", description = "用户id")})
     @ApiResponse(responseCode = "2xx", description = "用户对象(xml)")
     @GetMapping(value = "/find/xml/{id}", produces = MediaType.APPLICATION_XML_VALUE)
