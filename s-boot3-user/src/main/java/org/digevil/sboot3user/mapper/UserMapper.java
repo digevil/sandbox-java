@@ -1,8 +1,10 @@
 package org.digevil.sboot3user.mapper;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import org.apache.ibatis.annotations.*;
 import org.digevil.sandbox.s.model.User;
 
+@Schema
 @Mapper
 public interface UserMapper {
 
@@ -23,6 +25,9 @@ public interface UserMapper {
     @Select("SELECT * FROM aio_users WHERE uuid = #{uuid}")
     User findByUuid(@Param("uuid") String uuid);
 
+    /**
+     * @param user insert 成功的话 id 会刷新成真正的插入记录的 id
+     */
     @Insert("INSERT INTO aio_users(uuid, name, gender) VALUES (#{uuid}, #{name}, #{gender})")
     @Options(useGeneratedKeys = true, keyProperty = "id", keyColumn = "id")
     void insert(User user);
