@@ -2,13 +2,18 @@ package org.digevil.sandbox.s.model;
 
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
+import io.swagger.v3.oas.annotations.media.Schema;
 
+@Schema(name = "UserResponse", title = "用户对象")
 public class User {
 
+    @Schema(title = "用户id")
     private Integer id;
+    @Schema(title = "用户uuid")
     private String uuid;
+    @Schema(title = "用户名字")
     private String name;
-
+    @Schema(title = "用户性别")
     private UserGender gender;
 
     public Integer getId() {
