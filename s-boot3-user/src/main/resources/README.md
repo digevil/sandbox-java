@@ -182,3 +182,4 @@ java -jar target/log4j2-demo-0.0.1-SNAPSHOT.jar -DLog4jContextSelector=org.apach
 
 * https://www.callicoder.com/spring-boot-log4j-2-example/
 * https://segmentfault.com/a/1190000039751787
+* https://stackoverflow.com/questions/75719238/what-is-spring-boot-starter-log4j2
